@@ -2,7 +2,7 @@
 
  Maven plugin for calculating artifacts size.
 
- It is similar to dependency:tree but prints also size of artifact.  Artifact is displayed
+ It is similar to **dependency:tree** but prints also size of artifact.  Artifact is displayed
  like "org.slf4j:slf4j-api:jar:1.7.36 <41.125, 41.125>" where first number is size of 
  artifact jar and second one is calculated sum of dependences (by default with runtime scope).
 
@@ -10,6 +10,14 @@
  Also single jar packaging can duplicate size. 
 
  But it is useful to identify candidates to exclude from class path.
+
+ Example for this plugin 
+ ```
+[INFO] io.github.antonsjava:deps-size-plugin:maven-plugin:1.0 <21.345, 250.907>
+[INFO] +- org.apache.maven.shared:maven-dependency-tree:jar:3.2.1 <42.608, 229.562>
+[INFO]    +- org.eclipse.aether:aether-util:jar:1.0.0.v20140518 <145.829, 145.829>
+[INFO]    +- org.slf4j:slf4j-api:jar:1.7.36 <41.125, 41.125>
+ ```
 
 ## usage
 
@@ -24,10 +32,10 @@ mvn io.github.antonsjava:deps-size-plugin::list
 ```
 
 
-You can change sort by netto by -Dnetto=true param 
+You can change sort by netto by **-Dnetto=true** param 
 
 
-You can set another scope by -Dscope=compile. Possible scopes are  'runtime' (default), 
+You can set another scope by **-Dscope=compile**. Possible scopes are  'runtime' (default), 
 'compile+runtime', 'test', 'compile', 'runtime+system', 'provided', 'system', 'import'.
 
 
